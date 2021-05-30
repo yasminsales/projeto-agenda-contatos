@@ -27,7 +27,7 @@ namespace exercicio_LP_access
 
         private void consultar(object sender, EventArgs e)
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\yasmin.sandri.sales\source\repos\exercicio_LP_access\agendaContatos.mdb");
+            OleDbConnection con = new OleDbConnection(Globals.ConnectionString);
             con.Open();
             OleDbCommand cmd = con.CreateCommand();
             cmd.CommandText = "Select * from agendaContatos";
@@ -60,7 +60,7 @@ namespace exercicio_LP_access
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\yasmin.sandri.sales\source\repos\exercicio_LP_access\agendaContatos.mdb");
+            OleDbConnection con = new OleDbConnection(Globals.ConnectionString);
             con.Open();
             OleDbCommand cmd = con.CreateCommand();
             var selectedCells = this.dataGridView1.SelectedCells;

@@ -28,7 +28,7 @@ namespace exercicio_LP_access
 
         private void PreencherDados()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\yasmin.sandri.sales\source\repos\exercicio_LP_access\agendaContatos.mdb");
+            OleDbConnection con = new OleDbConnection(Globals.ConnectionString);
             con.Open();
             OleDbCommand cmd = con.CreateCommand();
             cmd.CommandText = "Select * from agendaContatos where ID = " + idAtualizacao;
@@ -80,7 +80,7 @@ namespace exercicio_LP_access
 
         private void Criar()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\yasmin.sandri.sales\source\repos\exercicio_LP_access\agendaContatos.mdb");
+            OleDbConnection con = new OleDbConnection(Globals.ConnectionString);
             con.Open();
             OleDbCommand cmd = con.CreateCommand();
             cmd.Connection = con;
@@ -113,7 +113,7 @@ namespace exercicio_LP_access
 
         private void Atualizar()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\yasmin.sandri.sales\source\repos\exercicio_LP_access\agendaContatos.mdb");
+            OleDbConnection con = new OleDbConnection(Globals.ConnectionString);
             con.Open();
             OleDbCommand cmd = con.CreateCommand();
             cmd.Connection = con;
